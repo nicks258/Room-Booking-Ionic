@@ -6,25 +6,45 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {IonicStorageModule} from "@ionic/storage";
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
+import { DatabaseProvider } from '../providers/database/database';
+import {ScreenOrientation} from "@ionic-native/screen-orientation";
+import {HttpModule} from "@angular/http";
+import {SQLite} from "@ionic-native/sqlite";
+import {PreviewPage} from "../pages/preview/preview";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    PreviewPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    IonicModule.forRoot(MyApp,{scrollAssist:false,
+      autoFocusAssist:false}),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    PreviewPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SQLitePorter,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatabaseProvider,
+    HttpModule,
+    ScreenOrientation,
+    SQLitePorter,
+    SQLite,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatabaseProvider
   ]
 })
 export class AppModule {}

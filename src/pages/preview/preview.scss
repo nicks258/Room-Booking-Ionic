@@ -1,0 +1,111 @@
+@font-face {
+  font-family: Dubai-Regular;
+  src: url("../assets/font/Dubai-Regular.ttf");
+}
+@font-face {
+  font-family: Dubai-Light;
+  src: url("../assets/font/Dubai-Light.ttf");
+}
+@font-face {
+  font-family: Dubai-Medium;
+  src: url("../assets/font/Dubai-Medium.ttf");
+}
+@font-face {
+  font-family: Dubai-Bold;
+}
+  page-preview {
+
+    .background_image {
+      background-image: linear-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../assets/imgs/background.jpg);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../assets/imgs/background.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    ion-label {
+      text-align: center;
+    }
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+      border-bottom: 0px solid rgb(0, 144, 215) !important;
+    }
+    .list-ios > .item-block:first-child {
+      border-top: 0px solid rgb(0, 144, 215) !important;
+    }
+    ion-item {
+      color: #ffffff !important;
+      background-color: rgba(0, 144, 215, 0.3) !important;
+      font-size: 1.7rem !important;
+      padding-left: 0!important;
+      margin-bottom: 5px!important;
+    }
+    .item-inner
+    {
+      border-bottom: 0 !important;
+    }
+    .item-block {
+      min-height: 0.4rem;
+    }
+    .select-ios .select-icon .select-icon-inner {
+      color: #ffffff !important;
+    }
+    ion-list {
+      margin: -1px 0 5px !important;
+    }
+    .grid {
+      padding: 15px 5px;
+    }
+    .button_submit {
+      display: block;
+      margin: auto;
+      background-color: rgb(0, 144, 215);
+      padding: 0 2em;
+      border-radius: 0;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+  }
+
+  .alert-wrapper {
+    min-width: 280px;
+    border-radius: 20px 0 !important;
+  }
+
+  .alert-message {
+    font-size: 24px !important;
+    color: #fff !important;
+  }
+
+  .alert-button {
+    font-size: 18px !important;
+    color: #fff !important;
+    font-weight: lighter !important;
+    height: 50px !important;
+    border-top: 0.55px solid #ffffff !important;
+    border-right: 0.55px solid #ffffff !important;
+  }
+
+  .alert-button:last-child {
+    font-weight: lighter !important;
+  }
+
+  .alert-title {
+    color: #fff;
+  }
+
+  .alert-tappable {
+    font-size: 16px !important;
+  }
+
+  .alert-radio-label {
+    color: #fff !important;
+  }
+
+  [aria-checked=true] .alert-radio-label {
+    color: #000 !important;
+  }
+
+  [aria-checked=true] .alert-radio-inner {
+    border-color: #000 !important;
+  }
+

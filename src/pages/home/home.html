@@ -1,14 +1,288 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding class="background_image">
+  <ion-grid class="gap">
+    <ion-row>
+      <ion-col col-8 style="padding: 0;">
+        <ion-row>
+          <ion-col col-12 style="padding: 0;">
+            <ion-input [(ngModel)]="roomName" class="room" placeholder=" Enter Room Number" style=" display:inline-block; width: 100%; float: left;color: #ffffff;font-family: Dubai-Light;"></ion-input>
+          </ion-col>
+          <ion-col col-12 style="padding: 0;">
+            <ion-datetime placeholder="Select Date" style=" display:inline-block; width: 100%; float: left;color: #ffffff;font-family: Dubai-Light;" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-col>
+      <ion-col col-4>
+	<img src="assets/imgs/dubaiwhite.png" style="width: 40mm;float: right">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+	<ion-grid>
+	  <ion-row>
+	  	<ion-col col-1></ion-col>
+	    <ion-col col-10 style="background-color: rgba(0,144,215,0.2);padding: 30px 0px;border-radius: 40px 0; ">
+
+	    	<ion-list>
+			  <ion-item>
+			    <ion-label>09:00 AM - 09:30 AM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot1">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>09:30 AM - 10:00 AM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot2">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>10:00 AM - 10:30 AM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot3">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>10:30 AM - 11:00 AM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot4">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>11:00 AM - 11:30 AM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot5">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>11:30 AM - 12:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot6">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>12:00 PM - 12:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot7">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>12:30 PM - 01:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot8">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>01:00 PM - 01:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot9">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>01:30 PM - 02:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot10">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>02:00 PM - 02:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot11">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>02:30 PM - 03:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot12">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>03:00 PM - 03:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot13">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>03:30 PM - 04:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot14">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>04:00 PM - 04:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot15">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>04:30 PM - 05:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot16">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>05:00 PM - 05:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot17">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+			<ion-list>
+			  <ion-item>
+			    <ion-label>05:30 PM - 06:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot18">
+			      <ion-option value="nes">NES</ion-option>
+			      <ion-option value="n64">Nintendo64</ion-option>
+			      <ion-option value="ps">PlayStation</ion-option>
+			      <ion-option value="genesis">Sega Genesis</ion-option>
+			      <ion-option value="saturn">Sega Saturn</ion-option>
+			      <ion-option value="snes">SNES</ion-option>
+			    </ion-select>
+			  </ion-item>
+			</ion-list>
+
+
+
+	    </ion-col>
+	    <ion-col col-1></ion-col>
+	  </ion-row>
+	</ion-grid>
+
+	<button ion-button class="button_submit" (click)="presentConfirm()">Submit</button>
+
 </ion-content>
