@@ -1,0 +1,38 @@
+<ion-content padding class="background_image">
+
+
+  <img src="assets/imgs/dubaiwhite.png" style="width: 40mm;float: right">
+
+  <ion-grid style="    margin-top: 40%;">
+    <ion-row><ion-col col-2>
+    </ion-col>
+
+      <ion-col col-8 style="background-color: rgba(0,144,215,0.2);padding: 40px 0px 20px;border-radius: 40px 0; ">
+
+
+        <ion-list>
+
+          <ion-item>
+            <ion-label >Room No :-</ion-label>
+            <ion-input type="text" [(ngModel)]="roomName" > {{roomName}}</ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label >Date :- </ion-label>
+            <ion-input type="date" [(ngModel)]="myDate" >{{myDate}}</ion-input>
+            <ion-datetime placeholder="Select Date" style="margin-left: 50px;" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          </ion-item>
+
+        </ion-list>
+
+
+
+      </ion-col>
+      <ion-col col-2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button class="button_submit" (click)="presentConfirm()">Submit</button>
+
+</ion-content>

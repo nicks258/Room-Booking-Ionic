@@ -23,7 +23,8 @@
       background-repeat: no-repeat;
     }
     ion-label {
-      text-align: center;
+      text-align: left;
+      padding-left: 15px!important;
     }
     .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
       border-bottom: 0px solid rgb(0, 144, 215) !important;
@@ -34,9 +35,9 @@
     ion-item {
       color: #ffffff !important;
       background-color: rgba(0, 144, 215, 0.3) !important;
-      font-size: 1.7rem !important;
+      font-size: 1.5rem !important;
       padding-left: 0!important;
-      margin-bottom: 5px!important;
+      margin-bottom: 3px!important;
     }
     .item-inner
     {

@@ -13,16 +13,21 @@ import {ScreenOrientation} from "@ionic-native/screen-orientation";
 import {HttpModule} from "@angular/http";
 import {SQLite} from "@ionic-native/sqlite";
 import {PreviewPage} from "../pages/preview/preview";
+import {AuthPage} from "../pages/auth/auth";
+import {AuthPageModule} from "../pages/auth/auth.module";
+import {RoomDetailsPage} from "../pages/room-details/room-details";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    RoomDetailsPage,
     PreviewPage,
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    AuthPageModule,
     IonicModule.forRoot(MyApp,{scrollAssist:false,
       autoFocusAssist:false}),
     IonicStorageModule.forRoot()
@@ -31,6 +36,8 @@ import {PreviewPage} from "../pages/preview/preview";
   entryComponents: [
     MyApp,
     HomePage,
+    AuthPage,
+    RoomDetailsPage,
     PreviewPage
   ],
   providers: [
@@ -41,10 +48,7 @@ import {PreviewPage} from "../pages/preview/preview";
     DatabaseProvider,
     HttpModule,
     ScreenOrientation,
-    SQLitePorter,
     SQLite,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DatabaseProvider
   ]
 })
 export class AppModule {}

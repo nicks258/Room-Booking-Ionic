@@ -35,7 +35,7 @@ export class DatabaseProvider {
   }
 
   fillDatabase() {
-    this.http.get('assets/dummyDump.sql')
+    this.http.get('assets/sample.sql')
       .map(res => res.text())
       .subscribe(sql => {
         this.sqlitePorter.importSqlToDb(this.database, sql)
@@ -69,12 +69,22 @@ export class DatabaseProvider {
     });
   }
 
-  addMeeting(TIME,COPART_NAME) {
-    let data = [TIME,COPART_NAME];
-    return this.database.executeSql("INSERT INTO MEETING_TABLE (TIME,COPART_NAME) VALUES (?, ?)", data).then(data => {
+  addMeeting(TIMEDATA,COPART_NAME) {
+    let data = [TIMEDATA,COPART_NAME];
+    return this.database.executeSql("INSERT INTO MEETING_TABLE_REAL (TIMEDATA,COPART_NAME) VALUES (?, ?)", data).then(data => {
       return data;
     }, err => {
       console.log('Error: ', err);
+      return err;
+    });
+  }
+
+  addCoParts(coparts_id,coparts_name) {
+    let data = [coparts_id,coparts_name];
+    return this.database.executeSql("INSERT INTO meeting_table (coparts_id,coparts_name) VALUES (?,?)", data).then(data => {
+      return data;
+    }, err => {
+      console.log('Error: ', err.toString());
       return err;
     });
   }
@@ -186,19 +196,15 @@ export class DatabaseProvider {
   }
 
 
-  getAllQuestions(participantId,eventId) {
-    return this.database.executeSql("SELECT * FROM QUESTION_TABLE_REAL WHERE PARTICIPANTS_ID = ? AND Event_ID = ?", [participantId,eventId]).then((data) => {
+  getAllCoParts() {
+    return this.database.executeSql("SELECT * FROM meeting_table ", []).then((data) => {
       let developers = [];
 
       if (data.rows.length > 0) {
         for (let i = 0; i < data.rows.length; i++) {
           developers.push({
-            Event_ID: data.rows.item(i).Event_ID,
-            PARTICIPANTS_ID: data.rows.item(i).PARTICIPANTS_ID,
-            QUESTION_ID: data.rows.item(i).QUESTION_ID,
-            QUESTIONS: data.rows.item(i).QUESTIONS,
-            OPTIONS: data.rows.item(i).OPTIONS,
-            QUESTION_TYPE: data.rows.item(i).QUESTION_TYPE,
+            coparts_id: data.rows.item(i).coparts_id,
+            coparts_name: data.rows.item(i).coparts_name,
           });
         }
       }

@@ -37,8 +37,13 @@ page-home {
 	  {
 	  	color: #ffffff!important;
 	  	background-color: rgba(0,144,215,0.3)!important;
-	  	font-size: 1.3rem!important;
+	  	font-size: 1.5rem!important;
+      margin: 0px 0 3px!important;
 	  }
+    .item-inner
+    {
+      border-bottom: none!important;
+    }
 	  .item-block
 	  {
 	  	    min-height: 0.4rem;
@@ -47,10 +52,7 @@ page-home {
 	  {
 	  	color:#ffffff!important;
 	  }
-	  ion-list
-	  {
-	  	    margin: -1px 0 5px!important;
-	  }
+
 	  .grid
 	  {
 	  	padding: 15px 5px;
@@ -77,11 +79,15 @@ page-home {
 }
   ion-datetime
   {
-    padding: 5px 8px 5px 0px!important;
+    padding: 5px 8px 5px 5px!important;
     font-size: 16px;
     font-weight: bold;
   }
-
+  .ion-select
+  {
+    max-width: 100%;
+    padding: 13px 37% 13px 16px!important;
+  }
 }
  .alert-wrapper
 	  {
