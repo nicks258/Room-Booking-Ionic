@@ -7,7 +7,6 @@ import { HomePage } from '../pages/home/home';
 import {PreviewPage} from "../pages/preview/preview";
 import {ScreenOrientation} from "@ionic-native/screen-orientation";
 import {RoomDetailsPage} from "../pages/room-details/room-details";
-import {AuthPage} from "../pages/auth/auth";
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,19 +23,19 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
       this.screenOrientation.lock('portrait');
-      env.nav.setRoot(AuthPage, {}, {animate: true, animation:'transition',duration:300,  direction: 'forward'});
-      // env.storage.get('session').then(data=>{
-      //   if(data=='true')
-      //   {
-      //     env.nav.setRoot(PreviewPage, {}, {animate: true, animation:'transition',duration:300,  direction: 'forward'});
-      //   }
-      //   else {
-      //     env.nav.setRoot(RoomDetailsPage, {}, {animate: true, animation:'transition',duration:300,  direction: 'forward'});
-      //   }
-      //   console.log("Preview");
-      // }).catch(error=>{
-      //   env.nav.setRoot(RoomDetailsPage, {}, {animate: true, animation:'transition',duration:300,  direction: 'forward'});
-      // })
+      // env.nav.setRoot(PreviewPage, {}, {animate: true, animation:'transition',duration:300,  direction: 'forward'});
+      env.storage.get('session').then(data=>{
+        if(data=='true')
+        {
+          env.nav.setRoot(PreviewPage, {}, {animate: true, animation:'transition',duration:300,  direction: 'forward'});
+        }
+        else {
+          env.nav.setRoot(RoomDetailsPage, {}, {animate: true, animation:'transition',duration:300,  direction: 'forward'});
+        }
+        console.log("Preview");
+      }).catch(error=>{
+        env.nav.setRoot(RoomDetailsPage, {}, {animate: true, animation:'transition',duration:300,  direction: 'forward'});
+      })
     });
   }
 }

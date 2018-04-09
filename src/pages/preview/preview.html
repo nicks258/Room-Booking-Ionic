@@ -6,7 +6,7 @@
 -->
 <ion-content no-bounce padding class="background_image">
 
-  <h3 style="float: left;color: #ffffff;font-family: Dubai-Light;">Room Name: {{roomName}}<br>Date: {{myDate}}</h3>
+  <h3 style="float: left;color: #ffffff;font-family: Dubai-Light;">Meeting Room: {{roomName}}<br>{{date}} {{myDate}} &nbsp; {{time}}</h3>
 
   <img (click)="openAuth()" src="assets/imgs/dubaiwhite.png" style="width: 40mm;float: right">
   <ion-grid >
@@ -15,25 +15,25 @@
       <ion-col col-12 style="background-color: rgba(0,144,215,0.2);padding: 30px 0px 25px;border-radius: 40px 0;">
 
         <ion-list>
-            <ion-item >
-              <ion-label>09:00 - 09:30</ion-label>
-              <ion-label *ngIf="!dropDown1">{{timeSlot1}}</ion-label>
-              <ion-select style="text-align: left;padding-left: 15px!important;" (ngModelChange)="presentConfirm('slot1')"  *ngIf="dropDown1" [(ngModel)]="timeSlot1"  >
-                <ion-option  *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
-              </ion-select>
-            </ion-item>
+            <!--<ion-item >-->
+              <!--<ion-label>09:00 - 09:30</ion-label>-->
+              <!--<ion-label *ngIf="!dropDown1">{{timeSlot1}}</ion-label>-->
+              <!--<ion-select style="text-align: left;padding-left: 15px!important;" (ngModelChange)="presentConfirm('slot1')"  *ngIf="dropDown1" [(ngModel)]="timeSlot1"  >-->
+                <!--<ion-option  *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>-->
+              <!--</ion-select>-->
+            <!--</ion-item>-->
 
-          <ion-item >
-            <ion-label>09:30 - 10:00</ion-label>
-            <ion-label *ngIf="!dropDown2">{{timeSlot2}}</ion-label>
-            <ion-select (ngModelChange)="presentConfirm('slot2')"  *ngIf="dropDown2" [(ngModel)]="timeSlot2"  >
-              <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
-            </ion-select>
-          </ion-item>
+          <!--<ion-item >-->
+            <!--<ion-label>09:30 - 10:00</ion-label>-->
+            <!--<ion-label *ngIf="!dropDown2">{{timeSlot2}}</ion-label>-->
+            <!--<ion-select (ngModelChange)="presentConfirm('slot2')"  *ngIf="dropDown2" [(ngModel)]="timeSlot2"  >-->
+              <!--<ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>-->
+            <!--</ion-select>-->
+          <!--</ion-item>-->
 
           <ion-item >
             <ion-label>10:00 - 10:30</ion-label>
-            <ion-label *ngIf="!dropDown3">{{timeSlot3}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown3">{{timeSlot3}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot3')"  *ngIf="dropDown3" [(ngModel)]="timeSlot3"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -41,7 +41,7 @@
 
           <ion-item >
             <ion-label>10:30 - 11:00</ion-label>
-            <ion-label *ngIf="!dropDown4">{{timeSlot4}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown4">{{timeSlot4}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot4')"  *ngIf="dropDown4" [(ngModel)]="timeSlot4"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -49,7 +49,7 @@
 
           <ion-item >
             <ion-label>11:00 - 11:30</ion-label>
-            <ion-label *ngIf="!dropDown5">{{timeSlot5}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown5">{{timeSlot5}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot5')"  *ngIf="dropDown5" [(ngModel)]="timeSlot5"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -57,7 +57,7 @@
 
           <ion-item >
             <ion-label>11:30 - 12:00</ion-label>
-            <ion-label *ngIf="!dropDown6">{{timeSlot6}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown6">{{timeSlot6}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot6')"  *ngIf="dropDown6" [(ngModel)]="timeSlot6"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -65,7 +65,7 @@
 
           <ion-item >
             <ion-label>12:00 - 12:30</ion-label>
-            <ion-label *ngIf="!dropDown7">{{timeSlot7}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown7">{{timeSlot7}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot7')"  *ngIf="dropDown7" [(ngModel)]="timeSlot7"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -73,7 +73,7 @@
 
           <ion-item >
             <ion-label>12:30 - 01:00</ion-label>
-            <ion-label *ngIf="!dropDown8">{{timeSlot8}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown8">{{timeSlot8}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot8')"  *ngIf="dropDown8" [(ngModel)]="timeSlot8"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -81,7 +81,7 @@
 
           <ion-item >
             <ion-label>01:00 - 01:30</ion-label>
-            <ion-label *ngIf="!dropDown9">{{timeSlot9}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown9">{{timeSlot9}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot9')"  *ngIf="dropDown9" [(ngModel)]="timeSlot9"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -89,7 +89,7 @@
 
           <ion-item >
             <ion-label>01:30 - 02:00</ion-label>
-            <ion-label *ngIf="!dropDown10">{{timeSlot10}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown10">{{timeSlot10}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot10')"  *ngIf="dropDown10" [(ngModel)]="timeSlot10"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -97,7 +97,7 @@
 
           <ion-item >
             <ion-label>02:00 - 02:30</ion-label>
-            <ion-label *ngIf="!dropDown11">{{timeSlot11}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown11">{{timeSlot11}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot11')"  *ngIf="dropDown11" [(ngModel)]="timeSlot11"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -105,7 +105,7 @@
 
           <ion-item >
             <ion-label>02:30 - 03:00</ion-label>
-            <ion-label *ngIf="!dropDown12">{{timeSlot12}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown12">{{timeSlot12}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot12')"  *ngIf="dropDown12" [(ngModel)]="timeSlot12"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -113,7 +113,7 @@
 
           <ion-item >
             <ion-label>03:00 - 03:30</ion-label>
-            <ion-label *ngIf="!dropDown13">{{timeSlot13}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown13">{{timeSlot13}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot13')"  *ngIf="dropDown13" [(ngModel)]="timeSlot13"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -121,7 +121,7 @@
 
           <ion-item >
             <ion-label>03:30 - 04:00</ion-label>
-            <ion-label *ngIf="!dropDown14">{{timeSlot14}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown14">{{timeSlot14}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot14')"  *ngIf="dropDown14" [(ngModel)]="timeSlot14"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -129,7 +129,7 @@
 
           <ion-item >
             <ion-label>04:00 - 04:30</ion-label>
-            <ion-label *ngIf="!dropDown15">{{timeSlot15}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown15">{{timeSlot15}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot15')"  *ngIf="dropDown15" [(ngModel)]="timeSlot15"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -137,7 +137,7 @@
 
           <ion-item >
             <ion-label>04:30 - 05:00</ion-label>
-            <ion-label *ngIf="!dropDown16">{{timeSlot16}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown16">{{timeSlot16}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot16')"  *ngIf="dropDown16" [(ngModel)]="timeSlot16"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -145,7 +145,7 @@
 
           <ion-item >
             <ion-label>05:00 - 05:30</ion-label>
-            <ion-label *ngIf="!dropDown17">{{timeSlot17}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown17">{{timeSlot17}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot17')"  *ngIf="dropDown17" [(ngModel)]="timeSlot17"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>
@@ -153,7 +153,7 @@
 
           <ion-item >
             <ion-label>05:30 - 06:00</ion-label>
-            <ion-label *ngIf="!dropDown18">{{timeSlot18}}</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown18">{{timeSlot18}}</ion-label>
             <ion-select (ngModelChange)="presentConfirm('slot18')"  *ngIf="dropDown18" [(ngModel)]="timeSlot18"  >
               <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
             </ion-select>

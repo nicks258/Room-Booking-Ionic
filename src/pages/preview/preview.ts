@@ -19,6 +19,11 @@ export class PreviewPage {
   timeArray:any[] = [];
   roomName;
   loader;
+  time;
+  monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  date;
   coparts:any[] = [];
   dropDown1:boolean=false;dropDown2:boolean=false;dropDown3:boolean=false;dropDown4:boolean=false;dropDown5:boolean=false;
   dropDown10:boolean=false;dropDown9:boolean=false;dropDown8:boolean=false;dropDown7:boolean=false;dropDown6:boolean=false;
@@ -44,111 +49,113 @@ export class PreviewPage {
         env.loader.dismiss();
       });
     },3000);
-
+    setInterval(function () {
+      env.latestTime();
+    },1000);
 
     // if(this.timeArray==undefined)
     {
-      env.storage.get('timeSlot1').then(data=>{
-        this.timeSlot1 = data;
-        if(data==undefined){
-          this.dropDown1 = true;
-        }
-        console.log("timeSlot1->"+ env.timeSlot1 + " " + data);
-        env.storage.get('timeSlot2').then(data=>{
-          this.timeSlot2 = data;
-          if(data==undefined){
-            this.dropDown2 = true;
-          }
+      // env.storage.get('timeSlot1').then(data=>{
+      //   this.timeSlot1 = data;
+      //   if(data==undefined){
+      //     this.dropDown1 = true;
+      //   }
+      //   console.log("timeSlot1->"+ env.timeSlot1 + " " + data);
+      //   env.storage.get('timeSlot2').then(data=>{
+      //     this.timeSlot2 = data;
+      //     if(data==undefined){
+      //       this.dropDown2 = true;
+      //     }
           env.storage.get('timeSlot3').then(data=>{
             this.timeSlot3 = data;
-            if(data==undefined){
+            if(data==undefined || data=='undefined'){
               this.dropDown3 = true;
             }
             env.storage.get('timeSlot4').then(data=>{
               this.timeSlot4 = data;
-              if(data==undefined){
+              if(data==undefined || data=='undefined'){
                 this.dropDown4 = true;
               }
               env.storage.get('timeSlot5').then(data=>{
                 this.timeSlot5 = data;
-                if(data==undefined){
+                if(data==undefined || data=='undefined'){
                   this.dropDown5 = true;
                 }
                 env.storage.get('timeSlot6').then(data=>{
                   this.timeSlot6 = data;
-                  if(data==undefined){
+                  if(data==undefined || data=='undefined'){
                     this.dropDown6 = true;
                   }
                   env.storage.get('timeSlot7').then(data=>{
                     this.timeSlot7 = data;
-                    if(data==undefined){
+                    if(data==undefined || data=='undefined'){
                       this.dropDown7 = true;
                     }
                     env.storage.get('timeSlot8').then(data=>{
                       this.timeSlot8 = data;
-                      if(data==undefined){
+                      if(data==undefined || data=='undefined'){
                         this.dropDown8 = true;
                       }
                       env.storage.get('timeSlot9').then(data=>{
                         this.timeSlot9 = data;
-                        if(data==undefined){
+                        if(data==undefined || data=='undefined'){
                           this.dropDown9 = true;
                         }
                         env.storage.get('timeSlot10').then(data=>{
                           this.timeSlot10 = data;
-                          if(data==undefined){
+                          if(data==undefined || data=='undefined'){
                             this.dropDown10 = true;
                           }
                           env.storage.get('timeSlot11').then(data=>{
                             this.timeSlot11 = data;
-                            if(data==undefined){
+                            if(data==undefined || data=='undefined'){
                               this.dropDown11 = true;
                             }
                             env.storage.get('timeSlot12').then(data=>{
                               this.timeSlot12 = data;
-                              if(data==undefined){
+                              if(data==undefined || data=='undefined'){
                                 this.dropDown12 = true;
                               }
                               env.storage.get('timeSlot13').then(data=>{
                                 this.timeSlot13 = data;
-                                if(data==undefined){
+                                if(data==undefined || data=='undefined'){
                                   this.dropDown13 = true;
                                 }
                                 env.storage.get('timeSlot14').then(data=>{
                                   this.timeSlot14 = data;
-                                  if(data==undefined){
+                                  if(data==undefined || data=='undefined'){
                                     this.dropDown14 = true;
                                   }
                                   env.storage.get('timeSlot15').then(data=>{
                                     this.timeSlot15 = data;
-                                    if(data==undefined){
+                                    if(data==undefined || data=='undefined'){
                                       this.dropDown15 = true;
                                     }
                                     env.storage.get('timeSlot16').then(data=>{
                                       this.timeSlot16 = data;
-                                      if(data==undefined){
+                                      if(data==undefined || data=='undefined'){
                                         this.dropDown16 = true;
                                       }
                                       env.storage.get('timeSlot17').then(data=>{
                                         this.timeSlot17 = data;
-                                        if(data==undefined){
+                                        if(data==undefined || data=='undefined'){
                                           this.dropDown17 = true;
                                         }
                                         env.storage.get('timeSlot18').then(data=>{
                                           env.timeSlot18 = data;
-                                          if(data==undefined){
+                                          if(data==undefined || data=='undefined'){
                                             this.dropDown18 = true;
                                           }
                                           env.timeArray = [];
-                                          console.log("timeSlot1 Array->"+ env.timeSlot1);
-                                          env.timeArray[0] = {
-                                            TIMESLOT: "09:00 AM - 09:30 AM",
-                                            NAME: " " + env.timeSlot1,
-                                          };
-                                          env.timeArray[1] = {
-                                            TIMESLOT: "09:30 AM - 10:00 AM",
-                                            NAME: env.timeSlot2,
-                                          };
+                                          // console.log("timeSlot1 Array->"+ env.timeSlot1);
+                                          // env.timeArray[0] = {
+                                          //   TIMESLOT: "09:00 AM - 09:30 AM",
+                                          //   NAME: " " + env.timeSlot1,
+                                          // };
+                                          // env.timeArray[1] = {
+                                          //   TIMESLOT: "09:30 AM - 10:00 AM",
+                                          //   NAME: env.timeSlot2,
+                                          // };
                                           env.timeArray[2] = {
                                             TIMESLOT: "10:30 AM - 11:00 AM",
                                             NAME: env.timeSlot3,
@@ -229,8 +236,8 @@ export class PreviewPage {
               });
             });
           });
-        });
-      });
+      //   });
+      // });
 
       env.storage.get('roomDetail').then(data=>{
         console.log("this.roomName" + this.roomName);
@@ -238,10 +245,14 @@ export class PreviewPage {
       });
 
 
-
-      env.storage.get('date').then(data=>{
-        this.myDate = data;
-      })
+      const d = new Date();
+      let monthName = env.monthNames[d.getMonth()];
+      env.date = new Date().getDate().toString();
+      let year = new Date().getFullYear().toString();
+      env.myDate = " " + monthName + " " + year;
+      // env.storage.get('date').then(data=>{
+      //   this.myDate = data;
+      // })
     }
     // else {
     //   this.roomName = this.navParams.get("ROOM_NAME");
@@ -273,10 +284,12 @@ export class PreviewPage {
     let alert1 = this.alertCtrl.create({
       title: '',
       message: 'Are You Sure?',
+      enableBackdropDismiss: false,
       buttons: [
         {
           text: 'Cancel',
           role: 'cancel',
+
           handler: () => {
             console.log('Cancel clicked');
           }
@@ -285,17 +298,17 @@ export class PreviewPage {
           text: 'OK',
           handler: () => {
             console.log("this.myDate-> " + this.myDate);
-            if(text == 'slot1')
-            {
-              this.dropDown1 = false;
-              env.storage.set('timeSlot1',this.timeSlot1);
-            }
-            else if(text == 'slot2')
-            {
-              this.dropDown2 = false;
-              env.storage.set('timeSlot2',this.timeSlot2);
-            }
-            else if(text == 'slot3')
+            // if(text == 'slot1')
+            // {
+            //   this.dropDown1 = false;
+            //   env.storage.set('timeSlot1',this.timeSlot1);
+            // }
+            // else if(text == 'slot2')
+            // {
+            //   this.dropDown2 = false;
+            //   env.storage.set('timeSlot2',this.timeSlot2);
+            // }
+            if(text == 'slot3')
             {
               this.dropDown3 = false;
               env.storage.set('timeSlot3',this.timeSlot3);
@@ -381,6 +394,11 @@ export class PreviewPage {
       ]
     });
     alert1.present();
+  }
+  latestTime(){
+    let hour = new Date().getHours();
+    let mins = new Date().getMinutes();
+    this.time = hour + " : " + mins;
   }
 
 }

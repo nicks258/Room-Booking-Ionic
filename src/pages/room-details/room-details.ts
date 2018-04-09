@@ -27,12 +27,6 @@ export class RoomDetailsPage {
       if(this.roomName==undefined){
         this.roomName="";
       }
-      env.storage.get('date').then(data=>{
-        this.myDate = data;
-        if(this.myDate==undefined){
-          this.myDate="";
-        }
-      })
     })
   }
 
@@ -42,16 +36,13 @@ export class RoomDetailsPage {
 
   presentConfirm(){
     let env = this;
-    if(this.roomName!= undefined && this.myDate!= undefined) {
-      console.log("roomName-> " + this.roomName + "Date-> " + this.myDate);
-      env.storage.set('date',this.myDate).then(data=>{
-        env.storage.set('roomDetail',this.roomName).then(data=>{
-          this.navCtrl.push(HomePage);
-        })
-      });
+    if(this.roomName!= undefined ) {
+      env.storage.set('roomDetail',this.roomName).then(data=>{
+        this.navCtrl.push(HomePage);
+      })
     }
     else {
-      alert("Please set Name/Date");
+      alert("Please set Meeting Room Name");
     }
   }
 

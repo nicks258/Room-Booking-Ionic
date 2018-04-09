@@ -25,7 +25,7 @@ export class AuthPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AuthPage');
-    // this.dataFromOptions = this.navParams.get('message');
+    this.dataFromOptions = this.navParams.get('message');
 
   }
 
