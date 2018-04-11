@@ -315,78 +315,169 @@ export class PreviewPage {
             }
             else if(text == 'slot4')
             {
-              this.dropDown4 = false;
-              env.storage.set('timeSlot4',this.timeSlot4);
+              if(this.timeSlot3 == this.timeSlot4){
+                env.presentWarning();
+                this.timeSlot4 = null;
+              }
+              else {
+                this.dropDown4 = false;
+                env.storage.set('timeSlot4',this.timeSlot4);
+              }
+
             }
             else if(text == 'slot5')
             {
-              this.dropDown5 = false;
-              env.storage.set('timeSlot5',this.timeSlot5);
+              if(this.timeSlot5 == this.timeSlot4){
+                env.presentWarning();
+                this.timeSlot5 = null;
+              }
+              else {
+                this.dropDown5 = false;
+                env.storage.set('timeSlot5', this.timeSlot5);
+              }
             }
             else if(text == 'slot6')
             {
-              this.dropDown6 = false;
-              env.storage.set('timeSlot6',this.timeSlot6);
+              if(this.timeSlot6 == this.timeSlot5){
+                env.presentWarning();
+                this.timeSlot6 =null;
+              }
+              else {
+                this.dropDown6 = false;
+                env.storage.set('timeSlot6', this.timeSlot6);
+              }
             }
             else if(text == 'slot7')
             {
-              this.dropDown7 = false;
-              env.storage.set('timeSlot7',this.timeSlot7);
+              if(this.timeSlot7 == this.timeSlot6){
+                env.presentWarning();
+                this.timeSlot7 = null;
+              }
+              else {
+                this.dropDown7 = false;
+                env.storage.set('timeSlot7', this.timeSlot7);
+              }
             }
             else if(text == 'slot8')
             {
-              this.dropDown8 = false;
-              env.storage.set('timeSlot8',this.timeSlot8);
+              if(this.timeSlot8 == this.timeSlot7){
+                env.presentWarning();
+                this.timeSlot8 = null;
+              }
+              else {
+                this.dropDown8 = false;
+                env.storage.set('timeSlot8', this.timeSlot8);
+              }
             }
             else if(text == 'slot9')
             {
-              this.dropDown9 = false;
-              env.storage.set('timeSlot9',this.timeSlot9);
+              if(this.timeSlot9 == this.timeSlot8){
+                env.presentWarning();
+                this.timeSlot9 = null;
+              }
+              else {
+                this.dropDown9 = false;
+                env.storage.set('timeSlot9', this.timeSlot9);
+              }
             }
             else if(text == 'slot10')
             {
-              this.dropDown10 = false;
-              env.storage.set('timeSlot10',this.timeSlot10);
+              if(this.timeSlot9 == this.timeSlot10){
+                env.presentWarning();
+                this.timeSlot10 = null;
+              }
+              else {
+                this.dropDown10 = false;
+                env.storage.set('timeSlot10', this.timeSlot10);
+              }
             }
             else if(text == 'slot11')
             {
-              this.dropDown11 = false;
-              env.storage.set('timeSlot11',this.timeSlot11);
+              if(this.timeSlot10 == this.timeSlot11){
+                env.presentWarning();
+                this.timeSlot11 = null;
+              }
+              else {
+                this.dropDown11 = false;
+                env.storage.set('timeSlot11', this.timeSlot11);
+              }
             }
             else if(text == 'slot12')
             {
-              this.dropDown12 = false;
-              env.storage.set('timeSlot12',this.timeSlot12);
+              if(this.timeSlot12 == this.timeSlot11){
+                env.presentWarning();
+                this.timeSlot12 = null;
+              }
+              else {
+                this.dropDown12 = false;
+                env.storage.set('timeSlot12', this.timeSlot12);
+              }
             }
             else if(text == 'slot13')
             {
-              this.dropDown13 = false;
-              env.storage.set('timeSlot13',this.timeSlot13);
+              if(this.timeSlot13 == this.timeSlot12){
+                env.presentWarning();
+                this.timeSlot13 = null;
+              }
+              else {
+                this.dropDown13 = false;
+                env.storage.set('timeSlot13', this.timeSlot13);
+              }
             }
             else if(text == 'slot14')
             {
-              this.dropDown14 = false;
-              env.storage.set('timeSlot14',this.timeSlot14);
+              if(this.timeSlot13 == this.timeSlot14){
+                env.presentWarning();
+                this.timeSlot14 = null;
+              }
+              else {
+                this.dropDown14 = false;
+                env.storage.set('timeSlot14', this.timeSlot14);
+              }
             }
             else if(text == 'slot15')
             {
-              this.dropDown15 = false;
-              env.storage.set('timeSlot15',this.timeSlot15);
+              if(this.timeSlot14 == this.timeSlot15){
+                env.presentWarning();
+                this.timeSlot15 = null;
+              }
+              else {
+                this.dropDown15 = false;
+                env.storage.set('timeSlot15', this.timeSlot15);
+              }
             }
             else if(text == 'slot16')
             {
-              this.dropDown16 = false;
-              env.storage.set('timeSlot16',this.timeSlot16);
+              if(this.timeSlot15 == this.timeSlot16){
+                env.presentWarning();
+                this.timeSlot16 = null;
+              }
+              else {
+                this.dropDown16 = false;
+                env.storage.set('timeSlot16', this.timeSlot16);
+              }
             }
             else if(text == 'slot17')
             {
-              this.dropDown17 = false;
-              env.storage.set('timeSlot17',this.timeSlot17);
+              if(this.timeSlot16 == this.timeSlot17){
+                env.presentWarning();
+                this.timeSlot17 = null;
+              }
+              else {
+                this.dropDown17 = false;
+                env.storage.set('timeSlot17', this.timeSlot17);
+              }
             }
             else if(text == 'slot18')
             {
-              this.dropDown18 = false;
-              env.storage.set('timeSlot18',this.timeSlot18);
+              if(this.timeSlot17 == this.timeSlot18){
+                env.presentWarning();
+                this.timeSlot18 =null;
+              }
+              else {
+                this.dropDown18 = false;
+                env.storage.set('timeSlot18', this.timeSlot18);
+              }
             }
             console.log('ok clicked');
           }
@@ -399,6 +490,23 @@ export class PreviewPage {
     let hour = new Date().getHours();
     let mins = new Date().getMinutes();
     this.time = hour + " : " + mins;
+  }
+  presentWarning(){
+    let env = this;
+    let alert1 = this.alertCtrl.create({
+      title: '',
+      message: 'Sorry you can\'t book two consecutive slots! Contact administration for more details',
+      buttons: [
+        {
+          text: 'OK',
+          handler: () => {
+
+            console.log('ok clicked');
+          }
+        }
+      ]
+    });
+    alert1.present();
   }
 
 }

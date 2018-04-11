@@ -59,7 +59,6 @@ export class HomePage {
         {
           text: 'OK',
           handler: () => {
-            // console.log("this.myDate-> " + this.myDate);
             env.addMeeting();
             console.log('ok clicked');
           }
