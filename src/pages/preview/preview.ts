@@ -315,7 +315,7 @@ export class PreviewPage {
             }
             else if(text == 'slot4')
             {
-              if(this.timeSlot3 == this.timeSlot4){
+              if(this.timeSlot3 == this.timeSlot4 || this.timeSlot4 == this.timeSlot5){
                 env.presentWarning();
                 this.timeSlot4 = null;
               }
@@ -327,7 +327,7 @@ export class PreviewPage {
             }
             else if(text == 'slot5')
             {
-              if(this.timeSlot5 == this.timeSlot4){
+              if(this.timeSlot5 == this.timeSlot4 || this.timeSlot5== this.timeSlot6 ){
                 env.presentWarning();
                 this.timeSlot5 = null;
               }
@@ -338,7 +338,7 @@ export class PreviewPage {
             }
             else if(text == 'slot6')
             {
-              if(this.timeSlot6 == this.timeSlot5){
+              if(this.timeSlot6 == this.timeSlot5  || this.timeSlot6 == this.timeSlot7){
                 env.presentWarning();
                 this.timeSlot6 =null;
               }
@@ -349,7 +349,7 @@ export class PreviewPage {
             }
             else if(text == 'slot7')
             {
-              if(this.timeSlot7 == this.timeSlot6){
+              if(this.timeSlot7 == this.timeSlot6 || this.timeSlot7 == this.timeSlot8){
                 env.presentWarning();
                 this.timeSlot7 = null;
               }
@@ -360,7 +360,7 @@ export class PreviewPage {
             }
             else if(text == 'slot8')
             {
-              if(this.timeSlot8 == this.timeSlot7){
+              if(this.timeSlot8 == this.timeSlot7 || this.timeSlot8 == this.timeSlot9){
                 env.presentWarning();
                 this.timeSlot8 = null;
               }
@@ -371,7 +371,7 @@ export class PreviewPage {
             }
             else if(text == 'slot9')
             {
-              if(this.timeSlot9 == this.timeSlot8){
+              if(this.timeSlot9 == this.timeSlot8 || this.timeSlot9 == this.timeSlot10){
                 env.presentWarning();
                 this.timeSlot9 = null;
               }
@@ -382,7 +382,7 @@ export class PreviewPage {
             }
             else if(text == 'slot10')
             {
-              if(this.timeSlot9 == this.timeSlot10){
+              if(this.timeSlot9 == this.timeSlot10 || this.timeSlot10 == this.timeSlot11){
                 env.presentWarning();
                 this.timeSlot10 = null;
               }
@@ -393,7 +393,7 @@ export class PreviewPage {
             }
             else if(text == 'slot11')
             {
-              if(this.timeSlot10 == this.timeSlot11){
+              if(this.timeSlot10 == this.timeSlot11 || this.timeSlot11 == this.timeSlot12){
                 env.presentWarning();
                 this.timeSlot11 = null;
               }
@@ -404,7 +404,7 @@ export class PreviewPage {
             }
             else if(text == 'slot12')
             {
-              if(this.timeSlot12 == this.timeSlot11){
+              if(this.timeSlot12 == this.timeSlot11 || this.timeSlot12 == this.timeSlot13){
                 env.presentWarning();
                 this.timeSlot12 = null;
               }
@@ -415,7 +415,7 @@ export class PreviewPage {
             }
             else if(text == 'slot13')
             {
-              if(this.timeSlot13 == this.timeSlot12){
+              if(this.timeSlot13 == this.timeSlot12 || this.timeSlot13 == this.timeSlot14){
                 env.presentWarning();
                 this.timeSlot13 = null;
               }
@@ -426,7 +426,7 @@ export class PreviewPage {
             }
             else if(text == 'slot14')
             {
-              if(this.timeSlot13 == this.timeSlot14){
+              if(this.timeSlot13 == this.timeSlot14 || this.timeSlot14 == this.timeSlot15){
                 env.presentWarning();
                 this.timeSlot14 = null;
               }
@@ -437,7 +437,7 @@ export class PreviewPage {
             }
             else if(text == 'slot15')
             {
-              if(this.timeSlot14 == this.timeSlot15){
+              if(this.timeSlot14 == this.timeSlot15 || this.timeSlot15 == this.timeSlot16){
                 env.presentWarning();
                 this.timeSlot15 = null;
               }
@@ -448,7 +448,7 @@ export class PreviewPage {
             }
             else if(text == 'slot16')
             {
-              if(this.timeSlot15 == this.timeSlot16){
+              if(this.timeSlot15 == this.timeSlot16 || this.timeSlot16 == this.timeSlot17){
                 env.presentWarning();
                 this.timeSlot16 = null;
               }
@@ -459,7 +459,7 @@ export class PreviewPage {
             }
             else if(text == 'slot17')
             {
-              if(this.timeSlot16 == this.timeSlot17){
+              if(this.timeSlot16 == this.timeSlot17 || this.timeSlot17 == this.timeSlot18){
                 env.presentWarning();
                 this.timeSlot17 = null;
               }
@@ -489,7 +489,7 @@ export class PreviewPage {
   latestTime(){
     let hour = new Date().getHours();
     let mins = new Date().getMinutes();
-    this.time = hour + " : " + mins;
+    this.time = this.formatAMPM(new Date());
   }
   presentWarning(){
     let env = this;
@@ -507,6 +507,18 @@ export class PreviewPage {
       ]
     });
     alert1.present();
+  }
+
+  formatAMPM(date) {
+    date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
   }
 
 }

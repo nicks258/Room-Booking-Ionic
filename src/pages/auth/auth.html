@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Authenticate</ion-title>
+    <ion-title class="auth_title">Authenticate</ion-title>
     <ion-buttons end>
       <button ion-button (click)="closeModal()">X</button>
     </ion-buttons>
@@ -11,10 +11,10 @@
 
 
 <ion-content no-bounce padding>
-  <ion-input placeholder="Username"  name= "username" [(ngModel)]="username"  type="text">
-  </ion-input>
+  <!--<ion-input placeholder="Username"  name= "username" [(ngModel)]="username"  type="text">-->
+  <!--</ion-input>-->
 
-  <ion-input placeholder="Password"  name= "password" [(ngModel)]="password"  type="password">
+  <ion-input  placeholder="Password"  name= "password" [(ngModel)]="password"  type="password">
   </ion-input>
 
   <button ion-button class="button_submit"  (click)="submit()">Submit</button>

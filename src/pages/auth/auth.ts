@@ -35,8 +35,8 @@ export class AuthPage {
   submit(){
     let env = this;
     console.log("->"+this.username + this.password);
-    if(this.username=='admin' && this.password=='admin') {
-      console.log('this.dataFromOptions->' + this.dataFromOptions);
+    if(this.password=='admin') {
+      console.log('this.dataFroOpns->' + this.dataFromOptions);
       if (this.dataFromOptions == 'room'){
         this.navCtrl.push(HomePage);
       }
@@ -46,7 +46,7 @@ export class AuthPage {
       }
     }
     else {
-      alert("Worng Username/Password");
+      alert("Wrong Password");
     }
   }
 

@@ -70,5 +70,22 @@ page-auth {
     font-size: 2rem;
   }
 
+  @media(min-width: 1024px)
+  {
+    .toolbar-title{
+      font-size: 2.4rem;
+    }
+    .button_submit {
+      display: block;
+      margin: 10px auto;
+      background-color: #0090d7;
+      padding: 0 2em;
+      border-radius: 0;
+      border-top-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      font-size: 2.2rem;
+    }
+  }
+
 
 }
