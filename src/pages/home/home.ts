@@ -267,14 +267,16 @@ export class HomePage {
                                           env.storage.get('timeSlot18').then(data=>{
                                             this.copart18 = data;
                                             console.log("Last Copart->"+this.copart18);
-                                            this.http.get('http://52.66.132.37/room_booking_admin/rest_api/get_coparts', {}).map(res => res.json()).subscribe(data => {
+                                            //TODO API PARSING
+                                            this.http.get('http://13.126.65.0/dtcm/admin/api/', {}).map(res => res.json()).subscribe(data => {
                                               // console.log(data);
                                               //      loadingPopup.dismiss();
                                               let data_to_use = data;
+                                              console.log("data-> "+ data);
                                               for(let copart of data_to_use)
                                               {
-                                                console.log("copartId-> " + copart.copart_id + "copart_name-> " + copart.copart_name);
-                                                env.dbProvider.addCoParts(copart.copart_id,copart.copart_name).then(data=>{
+                                                console.log("copartId-> " + copart.id + "copart_name-> " + copart.name);
+                                                env.dbProvider.addCoParts(copart.id,copart.name).then(data=>{
                                                   console.log("Working")
                                                 });
                                               }
@@ -283,6 +285,7 @@ export class HomePage {
                                               });
                                               this.loader.dismiss();
                                             },error2 => {
+                                              console.log("error-> " + error2);
                                               env.dbProvider.getAllCoParts().then(data=>{
                                                 env.coparts = data;
                                               });
