@@ -315,8 +315,8 @@ export class DatabaseProvider {
       return err;
     });
   }
-  deleteParticipantData(){
-    return this.database.executeSql("DELETE FROM PARTICIPANTS_TABLE ",[]).then(data => {
+  deleteAppData(){
+    return this.database.executeSql("DELETE FROM meeting_table ",[]).then(data => {
       return data;
     }, err => {
       console.log('Error: ', err);

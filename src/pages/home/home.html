@@ -34,6 +34,15 @@
 			<!--</ion-list>-->
 
 			<!--<ion-list>-->
+
+        <ion-item>
+          <ion-label>09:30 AM - 10:00 AM</ion-label>
+          <ion-select [(ngModel)]="timeSlot2"  >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}} [selected]="copart.coparts_name == copart2">{{copart.coparts_name}}</ion-option>
+          </ion-select>
+        </ion-item>
+
 			  <ion-item>
 			    <ion-label>10:00 AM - 10:30 AM</ion-label>
 			    <ion-select [(ngModel)]="timeSlot3" >

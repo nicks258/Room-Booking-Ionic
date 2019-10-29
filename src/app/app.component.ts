@@ -22,7 +22,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
-      this.screenOrientation.lock('portrait');
+     // this.screenOrientation.lock('portrait');
       // env.nav.setRoot(PreviewPage, {}, {animate: true, animation:'transition',duration:300,  direction: 'forward'});
       env.storage.get('session').then(data=>{
         if(data=='true')

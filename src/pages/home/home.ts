@@ -82,6 +82,12 @@ export class HomePage {
     // else {
     //   env.storage.set('timeSlot2',this.copart2);
     // }
+    if(this.timeSlot2 !=undefined || this.timeSlot2 =='undefined'){
+      env.storage.set('timeSlot2',this.timeSlot2);
+    }
+    else {
+      env.storage.set('timeSlot2',this.copart2);
+    }
     if(this.timeSlot3 !=undefined || this.timeSlot3 =='undefined'){
       env.storage.set('timeSlot3',this.timeSlot3);
     }
@@ -182,7 +188,7 @@ export class HomePage {
     // env.storage.set('roomDetail',this.roomName);
 
     // env.nextPage(0,"09:00 AM - 09:30 AM",this.timeSlot1);
-    // env.nextPage(1,"09:30 AM - 10:00 AM",this.timeSlot2);
+    env.nextPage(1,"09:30 AM - 10:00 AM",this.timeSlot2);
     env.nextPage(2,"10:00 AM - 10:30 AM",this.timeSlot3);
     env.nextPage(3,"10:30 AM - 11:00 AM",this.timeSlot4);
     env.nextPage(4,"11:00 AM - 11:30 AM",this.timeSlot5);
@@ -232,8 +238,8 @@ export class HomePage {
 
         // env.storage.get('timeSlot1').then(data=>{
         //   this.copart1 = data;
-        //   env.storage.get('timeSlot2').then(data=>{
-        //     this.copart2 = data;
+          env.storage.get('timeSlot2').then(data=>{
+            this.copart2 = data;
             env.storage.get('timeSlot3').then(data=>{
               this.copart3 = data;
               env.storage.get('timeSlot4').then(data=>{
@@ -268,10 +274,10 @@ export class HomePage {
                                             this.copart18 = data;
                                             console.log("Last Copart->"+this.copart18);
                                             //TODO API PARSING
-                                            this.http.get('http://13.126.65.0/dtcm/admin/api/', {}).map(res => res.json()).subscribe(data => {
+                                            this.http.get('http://rayqube.com/projects/dtcm_way_finder/rest/get_coparts', {}).map(res => res.json()).subscribe(data => {
                                               // console.log(data);
                                               //      loadingPopup.dismiss();
-                                              let data_to_use = data;
+                                              let data_to_use = data.copart;
                                               console.log("data-> "+ data);
                                               for(let copart of data_to_use)
                                               {
@@ -310,7 +316,7 @@ export class HomePage {
             });
           });
         });
-    //   });
+      });
     // });
   }
 

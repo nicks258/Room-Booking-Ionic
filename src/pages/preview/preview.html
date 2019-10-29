@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-content no-bounce padding class="background_image">
+<div no-bounce padding class="background_image">
 
   <h3 class="metting_date">Meeting Room: {{roomName}}<br>{{date}} {{myDate}} &nbsp; {{time}}</h3>
 
@@ -23,13 +23,13 @@
               <!--</ion-select>-->
             <!--</ion-item>-->
 
-          <!--<ion-item >-->
-            <!--<ion-label>09:30 - 10:00</ion-label>-->
-            <!--<ion-label *ngIf="!dropDown2">{{timeSlot2}}</ion-label>-->
-            <!--<ion-select (ngModelChange)="presentConfirm('slot2')"  *ngIf="dropDown2" [(ngModel)]="timeSlot2"  >-->
-              <!--<ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>-->
-            <!--</ion-select>-->
-          <!--</ion-item>-->
+          <ion-item >
+            <ion-label>09:30 - 10:00</ion-label>
+            <ion-label class="bold" *ngIf="!dropDown2">{{timeSlot2}}</ion-label>
+            <ion-select (ngModelChange)="presentConfirm('slot2')"  *ngIf="dropDown2" [(ngModel)]="timeSlot2"  >
+              <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>
+            </ion-select>
+          </ion-item>
 
           <ion-item >
             <ion-label>10:00 - 10:30</ion-label>
@@ -164,4 +164,4 @@
     </ion-row>
   </ion-grid>
 
-</ion-content>
+</div>

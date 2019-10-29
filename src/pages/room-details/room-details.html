@@ -17,6 +17,8 @@
             <ion-input type="text" [(ngModel)]="roomName" > {{roomName}}</ion-input>
           </ion-item>
 
+
+
           <!--<ion-item>-->
             <!--<ion-label >Date :- </ion-label>-->
             <!--<ion-input type="date" [(ngModel)]="myDate" >{{myDate}}</ion-input>-->
@@ -34,5 +36,5 @@
   </ion-grid>
 
   <button ion-button class="button_submit" (click)="presentConfirm()">Submit</button>
-
+  <button ion-button class="button_delete" (click)="deleteAppData()">Delete App data</button>
 </ion-content>

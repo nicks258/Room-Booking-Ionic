@@ -79,6 +79,19 @@
      font-size: 2rem;
    }
 
+   .button_delete
+   {
+     display: block;
+     margin: auto;
+     background-color: #0090d7;
+     padding: 1.3em 2.3em;
+     border-radius: 0;
+     margin-top: 40px;
+     border-top-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+     font-size: 2rem;
+   }
+
    @media(min-width: 1024px) {
      .metting_date {
        float: left;
@@ -111,6 +124,18 @@
        border-top-left-radius: 25px;
        border-bottom-right-radius: 25px;
        font-size: 2.5rem;
+     }
+     .button_delete
+     {
+       display: block;
+       margin: auto;
+       background-color: #0090d7;
+       padding: 1.3em 2.3em;
+       border-radius: 0;
+       margin-top: 40px;
+       border-top-left-radius: 20px;
+       border-bottom-right-radius: 20px;
+       font-size: 2rem;
      }
    }
  }

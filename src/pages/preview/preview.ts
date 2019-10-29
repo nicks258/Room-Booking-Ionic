@@ -66,6 +66,11 @@ export class PreviewPage {
       //     if(data==undefined){
       //       this.dropDown2 = true;
       //     }
+      env.storage.get('timeSlot2').then(data=>{
+        this.timeSlot2 = data;
+        if(data==undefined  || data=='undefined'){
+          this.dropDown2 = true;
+        }
           env.storage.get('timeSlot3').then(data=>{
             this.timeSlot3 = data;
             if(data==undefined || data=='undefined'){
@@ -236,6 +241,7 @@ export class PreviewPage {
               });
             });
           });
+          });
       //   });
       // });
 
@@ -308,10 +314,29 @@ export class PreviewPage {
             //   this.dropDown2 = false;
             //   env.storage.set('timeSlot2',this.timeSlot2);
             // }
-            if(text == 'slot3')
+            if(text == 'slot2')
             {
-              this.dropDown3 = false;
-              env.storage.set('timeSlot3',this.timeSlot3);
+              if(this.timeSlot2 == this.timeSlot3){
+                env.presentWarning();
+                this.timeSlot2 = null;
+              }
+              else {
+                this.dropDown2 = false;
+                env.storage.set('timeSlot2',this.timeSlot2);
+              }
+
+            }
+            else if(text == 'slot3')
+            {
+              if(this.timeSlot2 == this.timeSlot3 || this.timeSlot3 == this.timeSlot4){
+                env.presentWarning();
+                this.timeSlot3 = null;
+              }
+              else {
+                this.dropDown3 = false;
+                env.storage.set('timeSlot3',this.timeSlot3);
+              }
+
             }
             else if(text == 'slot4')
             {
